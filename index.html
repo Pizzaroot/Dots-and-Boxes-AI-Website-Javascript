@@ -322,25 +322,31 @@ function doAIMove() {
         }
 		if (isstillgoing) {
 			for (var n = randomstart; n < randomstart + 64; n++) {
-				boxToPut = (n % 64) % 16;
-				sideToPut = Math.floor((n % 64) / 16);
-				var danknumber = Math.floor(boxToPut / 4);
-				var boxvalue = board[boxToPut % 4][danknumber];
-				if (sideToPut == 0) {
-					if (boxvalue == 0 || boxvalue == 2 || boxvalue == 4 || boxvalue == 6 || boxvalue == 8 || boxvalue == 10 || boxvalue == 12 || boxvalue == 14)  {
-						putHumanMove(boxToPut % 4, danknumber, sideToPut, 'AI');
-					}
-				} else if (sideToPut == 1) {
-					if (boxvalue == 0 || boxvalue == 1 || boxvalue == 4 || boxvalue == 5 || boxvalue == 8 || boxvalue == 9 || boxvalue == 12 || boxvalue == 13) {
-						putHumanMove(boxToPut % 4, danknumber, sideToPut, 'AI');
-					}
-				} else if (sideToPut == 2) {
-					if (boxvalue == 0 || boxvalue == 1 || boxvalue == 2 || boxvalue == 3 || boxvalue == 8 || boxvalue == 9 || boxvalue == 10 || boxvalue == 11) {
-						putHumanMove(boxToPut % 4, danknumber, sideToPut, 'AI');
-					}
-				} else if (sideToPut == 3) {
-					if (boxvalue == 0 || boxvalue == 1 || boxvalue == 2 || boxvalue == 3 || boxvalue == 4 || boxvalue == 5 || boxvalue == 6 || boxvalue == 7) {
-						putHumanMove(boxToPut % 4, danknumber, sideToPut, 'AI');
+				if (isstillgoing) {
+					boxToPut = (n % 64) % 16;
+					sideToPut = Math.floor((n % 64) / 16);
+					var danknumber = Math.floor(boxToPut / 4);
+					var boxvalue = board[boxToPut % 4][danknumber];
+					if (sideToPut == 0) {
+						if (boxvalue == 0 || boxvalue == 2 || boxvalue == 4 || boxvalue == 6 || boxvalue == 8 || boxvalue == 10 || boxvalue == 12 || boxvalue == 14)  {
+							putHumanMove(boxToPut % 4, danknumber, sideToPut, 'AI');
+							isstillgoing = 0;
+						}
+					} else if (sideToPut == 1) {
+						if (boxvalue == 0 || boxvalue == 1 || boxvalue == 4 || boxvalue == 5 || boxvalue == 8 || boxvalue == 9 || boxvalue == 12 || boxvalue == 13) {
+							putHumanMove(boxToPut % 4, danknumber, sideToPut, 'AI');
+							isstillgoing = 0;
+						}
+					} else if (sideToPut == 2) {
+						if (boxvalue == 0 || boxvalue == 1 || boxvalue == 2 || boxvalue == 3 || boxvalue == 8 || boxvalue == 9 || boxvalue == 10 || boxvalue == 11) {
+							putHumanMove(boxToPut % 4, danknumber, sideToPut, 'AI');
+							isstillgoing = 0;
+						}
+					} else if (sideToPut == 3) {
+						if (boxvalue == 0 || boxvalue == 1 || boxvalue == 2 || boxvalue == 3 || boxvalue == 4 || boxvalue == 5 || boxvalue == 6 || boxvalue == 7) {
+							putHumanMove(boxToPut % 4, danknumber, sideToPut, 'AI');
+							isstillgoing = 0;
+						}
 					}
 				}
 			}
