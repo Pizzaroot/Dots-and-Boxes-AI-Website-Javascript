@@ -1,0 +1,366 @@
+<html>
+<head>
+<title>Dots and Boxes</title>
+</head>
+<body>
+<table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0">
+   <tbody>
+      <tr>
+         <td align="center"><img src="black.gif" border="0" width="8" height="8"></td>
+         <td align="center"><a href="javascript:putHumanMove(0,0,0)"><img src="blank.gif" id="he00" border="0" width="36" height="8"></a></td>
+         <td align="center"><img src="black.gif" border="0" width="8" height="8"></td>
+         <td align="center"><a href="javascript:putHumanMove(1,0,0)"><img src="blank.gif" id="he01" border="0" width="36" height="8"></a></td>
+         <td align="center"><img src="black.gif" border="0" width="8" height="8"></td>
+         <td align="center"><a href="javascript:putHumanMove(2,0,0)"><img src="blank.gif" id="he02" border="0" width="36" height="8"></a></td>
+         <td align="center"><img src="black.gif" border="0" width="8" height="8"></td>
+         <td align="center"><a href="javascript:putHumanMove(3,0,0)"><img src="blank.gif" id="he03" border="0" width="36" height="8"></a></td>
+         <td align="center"><img src="black.gif" width="8" height="8"></td>
+      </tr>
+      <tr>
+         <td align="center"><a href="javascript:putHumanMove(0,0,3)"><img src="blank.gif" id="ve00" border="0" width="8" height="36"></a></td>
+         <td align="center"><img id="sq00" src="blank.gif" border="0" width="36" height="36"></td>
+         <td align="center"><a href="javascript:putHumanMove(1,0,3)"><img src="blank.gif" id="ve01" border="0" width="8" height="36"></a></td>
+         <td align="center"><img id="sq01" src="blank.gif" border="0" width="36" height="36"></td>
+         <td align="center"><a href="javascript:putHumanMove(2,0,3)"><img src="blank.gif" id="ve02" border="0" width="8" height="36"></a></td>
+         <td align="center"><img id="sq02" src="blank.gif" border="0" width="36" height="36"></td>
+         <td align="center"><a href="javascript:putHumanMove(3,0,3)"><img src="blank.gif" id="ve03" border="0" width="8" height="36"></a></td>
+         <td align="center"><img id="sq03" src="blank.gif" border="0" width="36" height="36"></td>
+         <td align="center"><a href="javascript:putHumanMove(3,0,1)"><img src="blank.gif" id="ve04" border="0" width="8" height="36"></a></td>
+      </tr>
+      <tr>
+         <td align="center"><img src="black.gif" border="0" width="8" height="8"></td>
+         <td align="center"><a href="javascript:putHumanMove(0,1,0)"><img src="blank.gif" id="he10" border="0" width="36" height="8"></a></td>
+         <td align="center"><img src="black.gif" border="0" width="8" height="8"></td>
+         <td align="center"><a href="javascript:putHumanMove(1,1,0)"><img src="blank.gif" id="he11" border="0" width="36" height="8"></a></td>
+         <td align="center"><img src="black.gif" border="0" width="8" height="8"></td>
+         <td align="center"><a href="javascript:putHumanMove(2,1,0)"><img src="blank.gif" id="he12" border="0" width="36" height="8"></a></td>
+         <td align="center"><img src="black.gif" border="0" width="8" height="8"></td>
+         <td align="center"><a href="javascript:putHumanMove(3,1,0)"><img src="blank.gif" id="he13" border="0" width="36" height="8"></a></td>
+         <td align="center"><img src="black.gif" width="8" height="8"></td>
+      </tr>
+      <tr>
+         <td align="center"><a href="javascript:putHumanMove(0,1,3)"><img src="blank.gif" id="ve10" border="0" width="8" height="36"></a></td>
+         <td align="center"><img id="sq10" src="blank.gif" border="0" width="36" height="36"></td>
+         <td align="center"><a href="javascript:putHumanMove(1,1,3)"><img src="blank.gif" id="ve11" border="0" width="8" height="36"></a></td>
+         <td align="center"><img id="sq11" src="blank.gif" border="0" width="36" height="36"></td>
+         <td align="center"><a href="javascript:putHumanMove(2,1,3)"><img src="blank.gif" id="ve12" border="0" width="8" height="36"></a></td>
+         <td align="center"><img id="sq12" src="blank.gif" border="0" width="36" height="36"></td>
+         <td align="center"><a href="javascript:putHumanMove(3,1,3)"><img src="blank.gif" id="ve13" border="0" width="8" height="36"></a></td>
+         <td align="center"><img id="sq13" src="blank.gif" border="0" width="36" height="36"></td>
+         <td align="center"><a href="javascript:putHumanMove(3,1,1)"><img src="blank.gif" id="ve14" border="0" width="8" height="36"></a></td>
+      </tr>
+      <tr>
+         <td align="center"><img src="black.gif" border="0" width="8" height="8"></td>
+         <td align="center"><a href="javascript:putHumanMove(0,2,0)"><img src="blank.gif" id="he20" border="0" width="36" height="8"></a></td>
+         <td align="center"><img src="black.gif" border="0" width="8" height="8"></td>
+         <td align="center"><a href="javascript:putHumanMove(1,2,0)"><img src="blank.gif" id="he21" border="0" width="36" height="8"></a></td>
+         <td align="center"><img src="black.gif" border="0" width="8" height="8"></td>
+         <td align="center"><a href="javascript:putHumanMove(2,2,0)"><img src="blank.gif" id="he22" border="0" width="36" height="8"></a></td>
+         <td align="center"><img src="black.gif" border="0" width="8" height="8"></td>
+         <td align="center"><a href="javascript:putHumanMove(3,2,0)"><img src="blank.gif" id="he23" border="0" width="36" height="8"></a></td>
+         <td align="center"><img src="black.gif" width="8" height="8"></td>
+      </tr>
+      <tr>
+         <td align="center"><a href="javascript:putHumanMove(0,2,3)"><img src="blank.gif" id="ve20" border="0" width="8" height="36"></a></td>
+         <td align="center"><img id="sq20" src="blank.gif" border="0" width="36" height="36"></td>
+         <td align="center"><a href="javascript:putHumanMove(1,2,3)"><img src="blank.gif" id="ve21" border="0" width="8" height="36"></a></td>
+         <td align="center"><img id="sq21" src="blank.gif" border="0" width="36" height="36"></td>
+         <td align="center"><a href="javascript:putHumanMove(2,2,3)"><img src="blank.gif" id="ve22" border="0" width="8" height="36"></a></td>
+         <td align="center"><img id="sq22" src="blank.gif" border="0" width="36" height="36"></td>
+         <td align="center"><a href="javascript:putHumanMove(3,2,3)"><img src="blank.gif" id="ve23" border="0" width="8" height="36"></a></td>
+         <td align="center"><img id="sq23" src="blank.gif" border="0" width="36" height="36"></td>
+         <td align="center"><a href="javascript:putHumanMove(3,2,1)"><img src="blank.gif" id="ve24" border="0" width="8" height="36"></a></td>
+      </tr>
+      <tr>
+         <td align="center"><img src="black.gif" border="0" width="8" height="8"></td>
+         <td align="center"><a href="javascript:putHumanMove(0,3,0)"><img src="blank.gif" id="he30" border="0" width="36" height="8"></a></td>
+         <td align="center"><img src="black.gif" border="0" width="8" height="8"></td>
+         <td align="center"><a href="javascript:putHumanMove(1,3,0)"><img src="blank.gif" id="he31" border="0" width="36" height="8"></a></td>
+         <td align="center"><img src="black.gif" border="0" width="8" height="8"></td>
+         <td align="center"><a href="javascript:putHumanMove(2,3,0)"><img src="blank.gif" id="he32" border="0" width="36" height="8"></a></td>
+         <td align="center"><img src="black.gif" border="0" width="8" height="8"></td>
+         <td align="center"><a href="javascript:putHumanMove(3,3,0)"><img src="blank.gif" id="he33" border="0" width="36" height="8"></a></td>
+         <td align="center"><img src="black.gif" width="8" height="8"></td>
+      </tr>
+      <tr>
+         <td align="center"><a href="javascript:putHumanMove(0,3,3)"><img src="blank.gif" id="ve30" border="0" width="8" height="36"></a></td>
+         <td align="center"><img id="sq30" src="blank.gif" border="0" width="36" height="36"></td>
+         <td align="center"><a href="javascript:putHumanMove(1,3,3)"><img src="blank.gif" id="ve31" border="0" width="8" height="36"></a></td>
+         <td align="center"><img id="sq31" src="blank.gif" border="0" width="36" height="36"></td>
+         <td align="center"><a href="javascript:putHumanMove(2,3,3)"><img src="blank.gif" id="ve32" border="0" width="8" height="36"></a></td>
+         <td align="center"><img id="sq32" src="blank.gif" border="0" width="36" height="36"></td>
+         <td align="center"><a href="javascript:putHumanMove(3,3,3)"><img src="blank.gif" id="ve33" border="0" width="8" height="36"></a></td>
+         <td align="center"><img id="sq33" src="blank.gif" border="0" width="36" height="36"></td>
+         <td align="center"><a href="javascript:putHumanMove(3,3,1)"><img src="blank.gif" id="ve34" border="0" width="8" height="36"></a></td>
+      </tr>
+      <tr>
+         <td align="center"><img src="black.gif" border="0" width="8" height="8"></td>
+         <td align="center"><a href="javascript:putHumanMove(0,3,2)"><img src="blank.gif" id="he40" border="0" width="36" height="8"></a></td>
+         <td align="center"><img src="black.gif" border="0" width="8" height="8"></td>
+         <td align="center"><a href="javascript:putHumanMove(1,3,2)"><img src="blank.gif" id="he41" border="0" width="36" height="8"></a></td>
+         <td align="center"><img src="black.gif" border="0" width="8" height="8"></td>
+         <td align="center"><a href="javascript:putHumanMove(2,3,2)"><img src="blank.gif" id="he42" border="0" width="36" height="8"></a></td>
+         <td align="center"><img src="black.gif" border="0" width="8" height="8"></td>
+         <td align="center"><a href="javascript:putHumanMove(3,3,2)"><img src="blank.gif" id="he43" border="0" width="36" height="8"></a></td>
+         <td align="center"><img src="black.gif" border="0" width="8" height="8"></td>
+      </tr>
+   </tbody>
+</table>
+<br>
+<p>Human: <span id="humanscore"></span></p>
+<p>Pizzabot: <span id="aiscore"></span></p>
+<script>
+var board = new Array(4);
+for (var i = 0; i < 4; i++) {
+	board[i] = new Array(4);
+}
+for (var j = 0; j < 4; j++) {
+	for (var k = 0; k < 4; k++) {
+		board[j][k] = 0;
+	}
+}
+var AIScore = 0;
+var HumanScore = 0;
+function putHumanMove(x, y, side, player) {
+	if (player === undefined) {
+        player = 'Human';
+    }
+	if (Math.floor(board[x][y] % Math.pow(2, side + 1) / Math.pow(2, side)) == 0) {
+		if (player == 'Human') {
+			var isAITurn = 1;
+		} else {
+			var isAITurn = 0;
+		}
+		if (side == 0) {
+			board[x][y] += 1;
+			if (y != 0) {
+				board[x][y - 1] += 4;
+			}
+			document.getElementById('he' + y.toString() + x.toString()).src = 'black.gif';
+			if (board[x][y] == 15) {
+				if (player == 'Human') {
+					HumanScore += 1;
+					isAITurn = 0;
+				} else {
+					AIScore += 1;
+					isAITurn = 1;
+				}
+				document.getElementById('sq' + y.toString() + x.toString()).src = player + '.gif';
+			}
+			if (y != 0) {
+				if (board[x][y - 1] == 15) {
+					if (player == 'Human') {
+						HumanScore += 1;
+						isAITurn = 0;
+					} else {
+						AIScore += 1;
+						isAITurn = 1;
+					}
+					document.getElementById('sq' + (y - 1).toString() + x.toString()).src = player + '.gif';
+				}
+			}
+		} else if (side == 1) {
+			board[x][y] += 2;
+			if (x != 3) {
+				board[x + 1][y] += 8;
+			}
+			document.getElementById('ve' + y.toString() + (x + 1).toString()).src = 'black.gif';
+			if (board[x][y] == 15) {
+				if (player == 'Human') {
+					HumanScore += 1;
+					isAITurn = 0;
+				} else {
+					AIScore += 1;
+					isAITurn = 1;
+				}
+				document.getElementById('sq' + y.toString() + x.toString()).src = player + '.gif';
+			}
+			if (x != 3) {
+				if (board[x + 1][y] == 15) {
+					if (player == 'Human') {
+						HumanScore += 1;
+						isAITurn = 0;
+					} else {
+						AIScore += 1;
+						isAITurn = 1;
+					}
+					document.getElementById('sq' + y.toString() + (x + 1).toString()).src = player + '.gif';
+				}
+			}
+		} else if (side == 2) {
+			board[x][y] += 4;
+			if (y != 3) {
+				board[x][y + 1] += 1;
+			}
+			document.getElementById('he' + (y + 1).toString() + x.toString()).src = 'black.gif';
+			if (board[x][y] == 15) {
+				if (player == 'Human') {
+					HumanScore += 1;
+					isAITurn = 0;
+				} else {
+					AIScore += 1;
+					isAITurn = 1;
+				}
+				document.getElementById('sq' + y.toString() + x.toString()).src = player + '.gif';
+			}
+			if (y != 3) {
+				if (board[x][y + 1] == 15) {
+					if (player == 'Human') {
+						HumanScore += 1;
+						isAITurn = 0;
+					} else {
+						AIScore += 1;
+						isAITurn = 1;
+					}
+					document.getElementById('sq' + (y + 1).toString() + x.toString()).src = player + '.gif';
+				}
+			}
+		} else if (side == 3) {
+			board[x][y] += 8;
+			if (x != 0) {
+				board[x - 1][y] += 2;
+			}
+			document.getElementById('ve' + y.toString() + x.toString()).src = 'black.gif';
+			if (board[x][y] == 15) {
+				if (player == 'Human') {
+					HumanScore += 1;
+					isAITurn = 0;
+				} else {
+					AIScore += 1;
+					isAITurn = 1;
+				}
+				document.getElementById('sq' + y.toString() + x.toString()).src = player + '.gif';
+			}
+			if (x != 0) {
+				if (board[x - 1][y] == 15) {
+					if (player == 'Human') {
+						HumanScore += 1;
+						isAITurn = 0;
+					} else {
+						AIScore += 1;
+						isAITurn = 1;
+					}
+					document.getElementById('sq' + y.toString() + (x - 1).toString()).src = player + '.gif';
+				}
+			}
+		}
+		if (isAITurn == 1) {
+			doAIMove();
+		}
+	}
+	document.getElementById('humanscore').innerHTML = HumanScore;
+	document.getElementById('aiscore').innerHTML = AIScore;
+}
+
+function doAIMove() {
+	var boxToPut = -1;
+	var boxToPut1 = -1;
+	var boxToPut2 = -1;
+	var sideToPut = -1;
+	var isstillgoing = 1;
+    for (var k = 0; k < 4; k++) {
+        for (var l = 0; l < 4; l++) {
+            if (check3Box(board[l][k]) != -1) {
+                boxToPut1 = l;
+                boxToPut2 = k;
+                sideToPut = check3Box(board[l][k]);
+            }
+        }
+    }
+	if (boxToPut1 != -1) {
+		putHumanMove(boxToPut1, boxToPut2, sideToPut, 'AI');
+    } else {
+		var randomstart = Math.floor(Math.random() * 64);
+        for (var m = randomstart; m < randomstart + 64; m++) {
+            if (isstillgoing == 1) {
+				boxToPut = (m % 64) % 16;
+				sideToPut = Math.floor((m % 64) / 16);
+				var danknumber = Math.floor(boxToPut / 4);
+				var boxvalue = board[boxToPut % 4][danknumber];
+				if (sideToPut == 0) {
+					if (danknumber == 0) {
+						var boxvalue2 = 0;
+					} else {
+						var boxvalue2 = board[boxToPut % 4][danknumber - 1];
+					}
+					if ((boxvalue == 0 || boxvalue == 2 || boxvalue == 4 || boxvalue == 8) && (boxvalue2 == 0 || boxvalue2 == 1 || boxvalue2 == 2 || boxvalue2 == 8))  {
+						putHumanMove(boxToPut % 4, danknumber, sideToPut, 'AI');
+						isstillgoing = 0;
+					}
+				} else if (sideToPut == 1) {
+					if (boxToPut % 4 == 3) {
+						var boxvalue2 = 0;
+					} else {
+						var boxvalue2 = board[boxToPut % 4 + 1][danknumber];
+					}
+					if ((boxvalue == 0 || boxvalue == 1 || boxvalue == 4 || boxvalue == 8) && (boxvalue2 == 0 || boxvalue2 == 1 || boxvalue2 == 2 || boxvalue2 == 4)) {
+						putHumanMove(boxToPut % 4, danknumber, sideToPut, 'AI');
+						isstillgoing = 0;
+					}
+				} else if (sideToPut == 2) {
+					if (danknumber == 3) {
+						var boxvalue2 = 0;
+					} else {
+						var boxvalue2 = board[boxToPut % 4][danknumber + 1];
+					}
+					if ((boxvalue == 0 || boxvalue == 1 || boxvalue == 2 || boxvalue == 8) && (boxvalue2 == 0 || boxvalue2 == 2 || boxvalue2 == 4 || boxvalue2 == 8)) {
+						putHumanMove(boxToPut % 4, danknumber, sideToPut, 'AI');
+						isstillgoing = 0;
+					}
+				} else if (sideToPut == 3) {
+					if (boxToPut % 4 == 0) {
+						var boxvalue2 = 0;
+					} else {
+						var boxvalue2 = board[boxToPut % 4 - 1][danknumber];
+					}
+					if ((boxvalue == 0 || boxvalue == 1 || boxvalue == 2 || boxvalue == 4) && (boxvalue2 == 0 || boxvalue2 == 1 || boxvalue2 == 4 || boxvalue2 == 8)) {
+						putHumanMove(boxToPut % 4, danknumber, sideToPut, 'AI');
+						isstillgoing = 0;
+					}
+				}
+			}
+        }
+		if (isstillgoing) {
+			for (var n = randomstart; n < randomstart + 64; n++) {
+				boxToPut = (n % 64) % 16;
+				sideToPut = Math.floor((n % 64) / 16);
+				var danknumber = Math.floor(boxToPut / 4);
+				var boxvalue = board[boxToPut % 4][danknumber];
+				if (sideToPut == 0) {
+					if (boxvalue == 0 || boxvalue == 2 || boxvalue == 4 || boxvalue == 6 || boxvalue == 8 || boxvalue == 10 || boxvalue == 12 || boxvalue == 14)  {
+						putHumanMove(boxToPut % 4, danknumber, sideToPut, 'AI');
+					}
+				} else if (sideToPut == 1) {
+					if (boxvalue == 0 || boxvalue == 1 || boxvalue == 4 || boxvalue == 5 || boxvalue == 8 || boxvalue == 9 || boxvalue == 12 || boxvalue == 13) {
+						putHumanMove(boxToPut % 4, danknumber, sideToPut, 'AI');
+					}
+				} else if (sideToPut == 2) {
+					if (boxvalue == 0 || boxvalue == 1 || boxvalue == 2 || boxvalue == 3 || boxvalue == 8 || boxvalue == 9 || boxvalue == 10 || boxvalue == 11) {
+						putHumanMove(boxToPut % 4, danknumber, sideToPut, 'AI');
+					}
+				} else if (sideToPut == 3) {
+					if (boxvalue == 0 || boxvalue == 1 || boxvalue == 2 || boxvalue == 3 || boxvalue == 4 || boxvalue == 5 || boxvalue == 6 || boxvalue == 7) {
+						putHumanMove(boxToPut % 4, danknumber, sideToPut, 'AI');
+					}
+				}
+			}
+		}
+	}
+}
+
+function check3Box(number) {
+    if (number == 13) {
+        return 1;
+    } else if (number == 11) {
+        return 2;
+    } else if (number == 7) {
+        return 3;
+    } else if (number == 14) {
+        return 0;
+    } else {
+        return -1;
+    }
+}
+</script>
+</body>
+</html>
