@@ -83,7 +83,6 @@ document.getElementById('totalaiscore').innerHTML = totalAIScore;
 document.getElementById('totalhumanscore').innerHTML = totalHumanScore;
 document.getElementById('totalties').innerHTML = totalTies;
 var startisai = 0;
-var clickable = 1;
 var board = new Array(<?php echo $size ?>);
 for (var i = 0; i < <?php echo $size ?>; i++) {
 	board[i] = new Array(<?php echo $size ?>);
@@ -137,23 +136,33 @@ function restartGame() {
 }
 
 function putHumanMove(x, y, side, player) {
-	if (clickable == 1 || player == 'AI') {
-		if (player === undefined) {
-			player = 'Human';
+	if (player === undefined) {
+		player = 'Human';
+	}
+	if (Math.floor(board[x][y] % Math.pow(2, side + 1) / Math.pow(2, side)) == 0) {
+		if (player == 'Human') {
+			var isAITurn = 1;
+		} else {
+			var isAITurn = 0;
 		}
-		if (Math.floor(board[x][y] % Math.pow(2, side + 1) / Math.pow(2, side)) == 0) {
-			if (player == 'Human') {
-				var isAITurn = 1;
-			} else {
-				var isAITurn = 0;
+		if (side == 0) {
+			board[x][y] += 1;
+			if (y != 0) {
+				board[x][y - 1] += 4;
 			}
-			if (side == 0) {
-				board[x][y] += 1;
-				if (y != 0) {
-					board[x][y - 1] += 4;
+			document.getElementById('he' + y.toString() + 'a' + x.toString()).src = 'black.gif';
+			if (board[x][y] == 15) {
+				if (player == 'Human') {
+					HumanScore += 1;
+					isAITurn = 0;
+				} else {
+					AIScore += 1;
+					isAITurn = 1;
 				}
-				document.getElementById('he' + y.toString() + 'a' + x.toString()).src = 'black.gif';
-				if (board[x][y] == 15) {
+				document.getElementById('sq' + y.toString() + 'a' + x.toString()).src = player + '.gif';
+			}
+			if (y != 0) {
+				if (board[x][y - 1] == 15) {
 					if (player == 'Human') {
 						HumanScore += 1;
 						isAITurn = 0;
@@ -161,116 +170,103 @@ function putHumanMove(x, y, side, player) {
 						AIScore += 1;
 						isAITurn = 1;
 					}
-					document.getElementById('sq' + y.toString() + 'a' + x.toString()).src = player + '.gif';
-				}
-				if (y != 0) {
-					if (board[x][y - 1] == 15) {
-						if (player == 'Human') {
-							HumanScore += 1;
-							isAITurn = 0;
-						} else {
-							AIScore += 1;
-							isAITurn = 1;
-						}
-						document.getElementById('sq' + (y - 1).toString() + 'a' + x.toString()).src = player + '.gif';
-					}
-				}
-			} else if (side == 1) {
-				board[x][y] += 2;
-				if (x != <?php echo $size - 1 ?>) {
-					board[x + 1][y] += 8;
-				}
-				document.getElementById('ve' + y.toString() + 'a' + (x + 1).toString()).src = 'black.gif';
-				if (board[x][y] == 15) {
-					if (player == 'Human') {
-						HumanScore += 1;
-						isAITurn = 0;
-					} else {
-						AIScore += 1;
-						isAITurn = 1;
-					}
-					document.getElementById('sq' + y.toString() + 'a' + x.toString()).src = player + '.gif';
-				}
-				if (x != <?php echo $size - 1 ?>) {
-					if (board[x + 1][y] == 15) {
-						if (player == 'Human') {
-							HumanScore += 1;
-							isAITurn = 0;
-						} else {
-							AIScore += 1;
-							isAITurn = 1;
-						}
-						document.getElementById('sq' + y.toString() + 'a' + (x + 1).toString()).src = player + '.gif';
-					}
-				}
-			} else if (side == 2) {
-				board[x][y] += 4;
-				if (y != <?php echo $size - 1 ?>) {
-					board[x][y + 1] += 1;
-				}
-				document.getElementById('he' + (y + 1).toString() + 'a' + x.toString()).src = 'black.gif';
-				if (board[x][y] == 15) {
-					if (player == 'Human') {
-						HumanScore += 1;
-						isAITurn = 0;
-					} else {
-						AIScore += 1;
-						isAITurn = 1;
-					}
-					document.getElementById('sq' + y.toString() + 'a' + x.toString()).src = player + '.gif';
-				}
-				if (y != <?php echo $size - 1 ?>) {
-					if (board[x][y + 1] == 15) {
-						if (player == 'Human') {
-							HumanScore += 1;
-							isAITurn = 0;
-						} else {
-							AIScore += 1;
-							isAITurn = 1;
-						}
-						document.getElementById('sq' + (y + 1).toString() + 'a' + x.toString()).src = player + '.gif';
-					}
-				}
-			} else if (side == 3) {
-				board[x][y] += 8;
-				if (x != 0) {
-					board[x - 1][y] += 2;
-				}
-				document.getElementById('ve' + y.toString() + 'a' + x.toString()).src = 'black.gif';
-				if (board[x][y] == 15) {
-					if (player == 'Human') {
-						HumanScore += 1;
-						isAITurn = 0;
-					} else {
-						AIScore += 1;
-						isAITurn = 1;
-					}
-					document.getElementById('sq' + y.toString() + 'a' + x.toString()).src = player + '.gif';
-				}
-				if (x != 0) {
-					if (board[x - 1][y] == 15) {
-						if (player == 'Human') {
-							HumanScore += 1;
-							isAITurn = 0;
-						} else {
-							AIScore += 1;
-							isAITurn = 1;
-						}
-						document.getElementById('sq' + y.toString() + 'a' + (x - 1).toString()).src = player + '.gif';
-					}
+					document.getElementById('sq' + (y - 1).toString() + 'a' + x.toString()).src = player + '.gif';
 				}
 			}
-			if (isAITurn == 1) {
-				clickable = 0;
-				setTimeout(doAIMove, 50);
+		} else if (side == 1) {
+			board[x][y] += 2;
+			if (x != <?php echo $size - 1 ?>) {
+				board[x + 1][y] += 8;
+			}
+			document.getElementById('ve' + y.toString() + 'a' + (x + 1).toString()).src = 'black.gif';
+			if (board[x][y] == 15) {
+				if (player == 'Human') {
+					HumanScore += 1;
+					isAITurn = 0;
+				} else {
+					AIScore += 1;
+					isAITurn = 1;
+				}
+				document.getElementById('sq' + y.toString() + 'a' + x.toString()).src = player + '.gif';
+			}
+			if (x != <?php echo $size - 1 ?>) {
+				if (board[x + 1][y] == 15) {
+					if (player == 'Human') {
+						HumanScore += 1;
+						isAITurn = 0;
+					} else {
+						AIScore += 1;
+						isAITurn = 1;
+					}
+					document.getElementById('sq' + y.toString() + 'a' + (x + 1).toString()).src = player + '.gif';
+				}
+			}
+		} else if (side == 2) {
+			board[x][y] += 4;
+			if (y != <?php echo $size - 1 ?>) {
+				board[x][y + 1] += 1;
+			}
+			document.getElementById('he' + (y + 1).toString() + 'a' + x.toString()).src = 'black.gif';
+			if (board[x][y] == 15) {
+				if (player == 'Human') {
+					HumanScore += 1;
+					isAITurn = 0;
+				} else {
+					AIScore += 1;
+					isAITurn = 1;
+				}
+				document.getElementById('sq' + y.toString() + 'a' + x.toString()).src = player + '.gif';
+			}
+			if (y != <?php echo $size - 1 ?>) {
+				if (board[x][y + 1] == 15) {
+					if (player == 'Human') {
+						HumanScore += 1;
+						isAITurn = 0;
+					} else {
+						AIScore += 1;
+						isAITurn = 1;
+					}
+					document.getElementById('sq' + (y + 1).toString() + 'a' + x.toString()).src = player + '.gif';
+				}
+			}
+		} else if (side == 3) {
+			board[x][y] += 8;
+			if (x != 0) {
+				board[x - 1][y] += 2;
+			}
+			document.getElementById('ve' + y.toString() + 'a' + x.toString()).src = 'black.gif';
+			if (board[x][y] == 15) {
+				if (player == 'Human') {
+					HumanScore += 1;
+					isAITurn = 0;
+				} else {
+					AIScore += 1;
+					isAITurn = 1;
+				}
+				document.getElementById('sq' + y.toString() + 'a' + x.toString()).src = player + '.gif';
+			}
+			if (x != 0) {
+				if (board[x - 1][y] == 15) {
+					if (player == 'Human') {
+						HumanScore += 1;
+						isAITurn = 0;
+					} else {
+						AIScore += 1;
+						isAITurn = 1;
+					}
+					document.getElementById('sq' + y.toString() + 'a' + (x - 1).toString()).src = player + '.gif';
+				}
 			}
 		}
-		document.getElementById('humanscore').innerHTML = HumanScore;
-		document.getElementById('aiscore').innerHTML = AIScore;
-		
-		if (HumanScore + AIScore == <?php echo $size * $size ?>) {
-			displayWinandRestart();
+		if (isAITurn == 1) {
+			setTimeout(doAIMove, 50);
 		}
+	}
+	document.getElementById('humanscore').innerHTML = HumanScore;
+	document.getElementById('aiscore').innerHTML = AIScore;
+	
+	if (HumanScore + AIScore == <?php echo $size * $size ?>) {
+		displayWinandRestart();
 	}
 }
 
@@ -295,7 +291,6 @@ function displayWinandRestart() {
 }
 
 function doAIMove() {
-	clickable = 0;
 	var boxToPut = -1;
 	var boxToPut1 = -1;
 	var boxToPut2 = -1;
@@ -312,7 +307,6 @@ function doAIMove() {
     }
 	if (boxToPut1 != -1) {
 		putHumanMove(boxToPut1, boxToPut2, sideToPut, 'AI');
-		clickable = 1;
     } else {
 		var randomstart = Math.floor(Math.random() * <?php echo $size * $size * 4 ?>);
         for (var m = randomstart; m < randomstart + <?php echo $size * $size * 4 ?>; m++) {
@@ -330,7 +324,6 @@ function doAIMove() {
 					if ((boxvalue == 0 || boxvalue == 2 || boxvalue == 4 || boxvalue == 8) && (boxvalue2 == 0 || boxvalue2 == 1 || boxvalue2 == 2 || boxvalue2 == 8))  {
 						putHumanMove(boxToPut % <?php echo $size ?>, danknumber, sideToPut, 'AI');
 						isstillgoing = 0;
-						clickable = 1;
 					}
 				} else if (sideToPut == 1) {
 					if (boxToPut % <?php echo $size ?> == <?php echo $size - 1 ?>) {
@@ -341,7 +334,6 @@ function doAIMove() {
 					if ((boxvalue == 0 || boxvalue == 1 || boxvalue == 4 || boxvalue == 8) && (boxvalue2 == 0 || boxvalue2 == 1 || boxvalue2 == 2 || boxvalue2 == 4)) {
 						putHumanMove(boxToPut % <?php echo $size ?>, danknumber, sideToPut, 'AI');
 						isstillgoing = 0;
-						clickable = 1;
 					}
 				} else if (sideToPut == 2) {
 					if (danknumber == <?php echo $size - 1 ?>) {
@@ -352,7 +344,6 @@ function doAIMove() {
 					if ((boxvalue == 0 || boxvalue == 1 || boxvalue == 2 || boxvalue == 8) && (boxvalue2 == 0 || boxvalue2 == 2 || boxvalue2 == 4 || boxvalue2 == 8)) {
 						putHumanMove(boxToPut % <?php echo $size ?>, danknumber, sideToPut, 'AI');
 						isstillgoing = 0;
-						clickable = 1;
 					}
 				} else if (sideToPut == 3) {
 					if (boxToPut % <?php echo $size ?> == 0) {
@@ -363,7 +354,6 @@ function doAIMove() {
 					if ((boxvalue == 0 || boxvalue == 1 || boxvalue == 2 || boxvalue == 4) && (boxvalue2 == 0 || boxvalue2 == 1 || boxvalue2 == 4 || boxvalue2 == 8)) {
 						putHumanMove(boxToPut % <?php echo $size ?>, danknumber, sideToPut, 'AI');
 						isstillgoing = 0;
-						clickable = 1;
 					}
 				}
 			}
@@ -379,25 +369,21 @@ function doAIMove() {
 						if (boxvalue == 0 || boxvalue == 2 || boxvalue == 4 || boxvalue == 6 || boxvalue == 8 || boxvalue == 10 || boxvalue == 12 || boxvalue == 14)  {
 							putHumanMove(boxToPut % <?php echo $size ?>, danknumber, sideToPut, 'AI');
 							isstillgoing = 0;
-							clickable = 1;
 						}
 					} else if (sideToPut == 1) {
 						if (boxvalue == 0 || boxvalue == 1 || boxvalue == 4 || boxvalue == 5 || boxvalue == 8 || boxvalue == 9 || boxvalue == 12 || boxvalue == 13) {
 							putHumanMove(boxToPut % <?php echo $size ?>, danknumber, sideToPut, 'AI');
 							isstillgoing = 0;
-							clickable = 1;
 						}
 					} else if (sideToPut == 2) {
 						if (boxvalue == 0 || boxvalue == 1 || boxvalue == 2 || boxvalue == 3 || boxvalue == 8 || boxvalue == 9 || boxvalue == 10 || boxvalue == 11) {
 							putHumanMove(boxToPut % <?php echo $size ?>, danknumber, sideToPut, 'AI');
 							isstillgoing = 0;
-							clickable = 1;
 						}
 					} else if (sideToPut == 3) {
 						if (boxvalue == 0 || boxvalue == 1 || boxvalue == 2 || boxvalue == 3 || boxvalue == 4 || boxvalue == 5 || boxvalue == 6 || boxvalue == 7) {
 							putHumanMove(boxToPut % <?php echo $size ?>, danknumber, sideToPut, 'AI');
 							isstillgoing = 0;
-							clickable = 1;
 						}
 					}
 				}
